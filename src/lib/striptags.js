@@ -78,6 +78,9 @@ function init_context(allowable_tags, tag_replacement) {
 }
 
 function striptags_internal(html, context) {
+  if (typeof html != "string") {
+            throw new TypeError("'html' parameter must be a string");
+        }
   const allowable_tags = context.allowable_tags;
   const tag_replacement = context.tag_replacement;
 
